@@ -8,5 +8,5 @@ Used Stack:
 Used IDE:
 - IntelliJ IDEA v.2018.3.4
 
-Uded Browser:
-- Google Chrom v.72
+Used Browser:
+- Google Chrome v.72
