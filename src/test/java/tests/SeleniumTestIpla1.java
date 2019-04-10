@@ -17,8 +17,6 @@ public class SeleniumTestIpla1 {
 
         Assert.assertTrue("Title should start",driver.getTitle().startsWith("IPLA"));
 
-        //System.out.println(System.currentTimeMillis());
-
         driver.close();
     }
 }
