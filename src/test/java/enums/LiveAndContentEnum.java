@@ -4,8 +4,7 @@ public enum LiveAndContentEnum {
 
     Today("DZISIAJ 10 kwietnia"),
     CanalName("Live"),
-    Content("Polityka na ostro (transmisja bezpłatna)"),
-    HIGH("high");
+    Content("Polityka na ostro (transmisja bezpłatna)");
 
     private String val;
 
