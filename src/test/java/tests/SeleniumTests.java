@@ -1,5 +1,7 @@
 package tests;
 
+import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.exceptions.ATUTestRecorderException;
 import enums.LiveAndContentEnum;
 import enums.SportAndPlayerContent;
 import org.junit.Assert;
@@ -11,6 +13,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 
 public class SeleniumTests {
@@ -310,11 +314,13 @@ public class SeleniumTests {
     }
 
     @Test
-    public void checkSportAndPlayerContent(){
+    public void checkSportAndPlayerContent() throws ATUTestRecorderException, InterruptedException {
 
         WebDriver driver = new ChromeDriver();
 
         driver.navigate().to("http://iplatest.azurewebsites.net");
+
+       // driver.manage().window().maximize();
 
         WebDriverWait wait = new WebDriverWait(driver, 10); //seconds
 
@@ -378,9 +384,16 @@ public class SeleniumTests {
 
         element6.click();
 
+
+        ATUTestRecorder recorder = new ATUTestRecorder("/home/arkadiusz/Pulpit/zadania/SeleniumTest","Test",false);
+
+        recorder.start();
+
         System.out.println("Current Url is: " + driver.getCurrentUrl());
 
-//        driver.close();
+        TimeUnit.SECONDS.sleep(15);
+
+        recorder.stop();
 
     }
 
