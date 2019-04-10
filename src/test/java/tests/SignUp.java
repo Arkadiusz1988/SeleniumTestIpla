@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SeleniumTestIpla4 {
+public class SignUp {
 
     @Test
     public void checkSignUp() {
@@ -117,6 +117,8 @@ public class SeleniumTestIpla4 {
         element10.click();
 
         System.out.println("Current Url is: " + driver.getCurrentUrl());
+
+        driver.close();
     }
 
 }

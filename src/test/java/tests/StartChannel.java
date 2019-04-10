@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SeleniumTestIpla6 {
+public class StartChannel {
 
 
     @Test
@@ -64,6 +64,8 @@ public class SeleniumTestIpla6 {
         element3.click();
 
         Assert.assertEquals("http://iplatest.azurewebsites.net/", driver.getCurrentUrl());
+
+        driver.close();
     }
 
 

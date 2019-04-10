@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-public class SeleniumTestIpla1 {
+public class StartWebDriver {
 
     @Test
     public void startWebDriver(){

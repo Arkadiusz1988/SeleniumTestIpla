@@ -1,6 +1,6 @@
 package enums;
 
-public enum SportAndPlayerContent {
+public enum SportAndPlayerContentEnum {
 
 
     CanalName("SPORT"),
@@ -10,7 +10,7 @@ public enum SportAndPlayerContent {
 
     private String val;
 
-    SportAndPlayerContent(String val) {
+    SportAndPlayerContentEnum(String val) {
         this.val = val;
     }
 

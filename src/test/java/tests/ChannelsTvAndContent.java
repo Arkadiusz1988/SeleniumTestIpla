@@ -1,8 +1,7 @@
 package tests;
 
-import atu.testrecorder.ATUTestRecorder;
-import atu.testrecorder.exceptions.ATUTestRecorderException;
-import enums.SportAndPlayerContent;
+import enums.ChannelsTvAndContentEnum;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,10 +10,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SeleniumTestIpla5 {
+public class ChannelsTvAndContent {
 
     @Test
-    public void checkSportAndPlayerContent() throws ATUTestRecorderException, InterruptedException {
+    public void checkChannelsTvAndContent(){
 
         WebDriver driver = new ChromeDriver();
 
@@ -46,17 +45,17 @@ public class SeleniumTestIpla5 {
 
         System.out.println("Current Url is: " + driver.getCurrentUrl());
 
-        WebElement element3 = driver.findElement(By.xpath("//*[contains(text(),"+"'"+ SportAndPlayerContent.CanalName.getVal()+"'"+")]"));
+        WebElement element3 = driver.findElement(By.xpath("//*[contains(text(),"+"'"+ ChannelsTvAndContentEnum.CanalName.getVal()+"'"+")]"));
 
         element3.click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),"+"'"+SportAndPlayerContent.ContentName.getVal()+"'"+")]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),"+"'"+ChannelsTvAndContentEnum.ContentName.getVal()+"'"+")]")));
 
         System.out.println("Current Url is: " + driver.getCurrentUrl());
 
         WebElement element4 =
                 driver.findElement(
-                        By.xpath("//*[contains(text(),"+"'"+SportAndPlayerContent.ContentName.getVal()+"'"+")]"));
+                        By.xpath("//*[contains(text(),"+"'"+ChannelsTvAndContentEnum.ContentName.getVal()+"'"+")]"));
 
         WebElement parent = element4.findElement(By.xpath("./.."));
         WebElement parent1 = parent.findElement(By.xpath("../.."));
@@ -68,28 +67,17 @@ public class SeleniumTestIpla5 {
 
         System.out.println("Current Url is: " + driver.getCurrentUrl());
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),"+"'"+SportAndPlayerContent.ContentSecondName.getVal()+"'"+")]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'KUPUJĘ')]")));
 
-        WebElement element5 =
-                driver.findElement(
-                        By.xpath("//*[contains(text(),"+"'"+SportAndPlayerContent.ContentSecondName.getVal()+"'"+")]"));
+        Assert.assertEquals("KUPUJĘ",driver.findElement(By.xpath("//*[contains(text(),'KUPUJĘ')]")).getText());
+
+        WebElement element5 = driver.findElement(By.xpath("//*[contains(text(),'OGLĄDAJ')]"));
 
         element5.click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),"+"'"+SportAndPlayerContent.WatchLater.getVal()+"'"+")]")));
-
-        WebElement element6 = driver.findElement(By.xpath("//*[contains(text(),"+"'"+SportAndPlayerContent.WatchLater.getVal()+"'"+")]"));
-
-        element6.click();
-
-        ATUTestRecorder recorder = new ATUTestRecorder("/home/arkadiusz/Pulpit/zadania/SeleniumTest","Test",false);
-
         System.out.println("Current Url is: " + driver.getCurrentUrl());
 
-//        recorder.start();
-//
-//        TimeUnit.SECONDS.sleep(15);
-//
-//        recorder.stop();
+        driver.close();
+
     }
 }
