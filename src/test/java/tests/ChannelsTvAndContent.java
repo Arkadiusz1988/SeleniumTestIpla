@@ -45,7 +45,7 @@ public class ChannelsTvAndContent {
 
         System.out.println("Current Url is: " + driver.getCurrentUrl());
 
-        WebElement element3 = driver.findElement(By.xpath("//*[contains(text(),"+"'"+ ChannelsTvAndContentEnum.CanalName.getVal()+"'"+")]"));
+        WebElement element3 = driver.findElement(By.xpath("//*[contains(text(),"+"'"+ChannelsTvAndContentEnum.CanalName.getVal()+"'"+")]"));
 
         element3.click();
 

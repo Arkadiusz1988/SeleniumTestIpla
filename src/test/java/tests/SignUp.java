@@ -1,5 +1,7 @@
 package tests;
 
+import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.exceptions.ATUTestRecorderException;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,10 +11,16 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public class SignUp {
 
     @Test
-    public void checkSignUp() {
+    public void checkSignUp() throws ATUTestRecorderException, InterruptedException {
+
+        ATUTestRecorder recorder = new ATUTestRecorder("/home/arkadiusz/Pulpit/zadania/SeleniumTest","SignUpTest",false);
+
+        recorder.start();
 
         WebDriver driver = new ChromeDriver();
 
@@ -117,6 +125,8 @@ public class SignUp {
         element10.click();
 
         System.out.println("Current Url is: " + driver.getCurrentUrl());
+
+        recorder.stop();
 
         driver.close();
     }
