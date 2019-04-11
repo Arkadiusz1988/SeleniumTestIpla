@@ -54,21 +54,94 @@ public class SideBar {
         driver.findElement(
             By.cssSelector(
                 "#container > div > div.mainbox > span > div > div.ErrorPrompt--section-right > span > span > button"));
-
     element2.click();
-
     System.out.println("Current Url is: " + driver.getCurrentUrl());
 
     WebElement element3 =
         driver.findElement(
             By.xpath(
                 "//*[contains(text()," + "'" + SideBarEnum.CanalName1.getVal() + "'" + ")]"));
-
     element3.click();
+    System.out.println("Current Url is: " + driver.getCurrentUrl());
 
-    wait.until(
-        ExpectedConditions.visibilityOfElementLocated(
-            By.xpath(
-                "//*[contains(text()," + "'" + LiveAndContentEnum.Today.getVal() + "'" + ")]")));
+    WebElement element4 =
+              driver.findElement(
+                      By.xpath(
+                              "//*[contains(text()," + "'" + SideBarEnum.CanalName2.getVal() + "'" + ")]"));
+    element4.click();
+    System.out.println("Current Url is: " + driver.getCurrentUrl());
+
+    WebElement element5 =
+              driver.findElement(
+                      By.xpath(
+                              "//*[contains(text()," + "'" + SideBarEnum.CanalName3.getVal() + "'" + ")]"));
+    element5.click();
+    System.out.println("Current Url is: " + driver.getCurrentUrl());
+
+    WebElement element6 =
+              driver.findElement(
+                      By.xpath(
+                              "//*[contains(text()," + "'" + SideBarEnum.CanalName4.getVal() + "'" + ")]"));
+    element6.click();
+    System.out.println("Current Url is: " + driver.getCurrentUrl());
+
+    WebElement element7 =
+              driver.findElement(
+                      By.xpath(
+                              "//*[contains(text()," + "'" + SideBarEnum.CanalName5.getVal() + "'" + ")]"));
+    element7.click();
+    System.out.println("Current Url is: " + driver.getCurrentUrl());
+
+    WebElement element8 =
+              driver.findElement(
+                      By.xpath(
+                              "//*[contains(text()," + "'" + SideBarEnum.CanalName6.getVal() + "'" + ")]"));
+    element8.click();
+    System.out.println("Current Url is: " + driver.getCurrentUrl());
+
+    WebElement element9 =
+              driver.findElement(
+                      By.xpath(
+                              "//*[contains(text()," + "'" + SideBarEnum.CanalName7.getVal() + "'" + ")]"));
+    element9.click();
+    System.out.println("Current Url is: " + driver.getCurrentUrl());
+
+    WebElement element10 =
+              driver.findElement(
+                      By.xpath(
+                              "//*[contains(text()," + "'" + SideBarEnum.CanalName8.getVal() + "'" + ")]"));
+    element10.click();
+    System.out.println("Current Url is: " + driver.getCurrentUrl());
+
+    WebElement element11 =
+              driver.findElement(
+                      By.xpath(
+                              "//*[contains(text()," + "'" + SideBarEnum.CanalName9.getVal() + "'" + ")]"));
+    element11.click();
+    System.out.println("Current Url is: " + driver.getCurrentUrl());
+
+    WebElement element12 =
+              driver.findElement(
+                      By.xpath(
+                              "//*[contains(text()," + "'" + SideBarEnum.CanalName10.getVal() + "'" + ")]"));
+    element12.click();
+    System.out.println("Current Url is: " + driver.getCurrentUrl());
+
+    WebElement element13 =
+              driver.findElement(
+                      By.xpath(
+                              "//*[contains(text()," + "'" + SideBarEnum.CanalName11.getVal() + "'" + ")]"));
+    element13.click();
+    System.out.println("Current Url is: " + driver.getCurrentUrl());
+
+    WebElement element14 =
+              driver.findElement(
+                      By.xpath(
+                              "//*[contains(text()," + "'" + SideBarEnum.CanalName12.getVal() + "'" + ")]"));
+    element14.click();
+    System.out.println("Current Url is: " + driver.getCurrentUrl());
+
+    driver.close();
+
   }
 }
