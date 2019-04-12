@@ -68,7 +68,7 @@ public class ChannelsTvAndContent {
         System.out.println("Current Url is: " + driver.getCurrentUrl());
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'KUPUJĘ')]")));
-
+        // sprawdzenie przycisku kupuje
         Assert.assertEquals("KUPUJĘ",driver.findElement(By.xpath("//*[contains(text(),'KUPUJĘ')]")).getText());
 
         WebElement element5 = driver.findElement(By.xpath("//*[contains(text(),'OGLĄDAJ')]"));

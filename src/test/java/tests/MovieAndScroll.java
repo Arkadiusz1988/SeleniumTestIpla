@@ -86,6 +86,7 @@ public class MovieAndScroll {
 
     Assert.assertEquals("G.I. Joe: Czas Kobry", driver.findElement(By.xpath("//*[contains(text()," + "'" + MovieAndScrollEnum.MovieName.getVal() + "'" + ")]")).getText());
 
+    driver.close();
   }
 
 }
