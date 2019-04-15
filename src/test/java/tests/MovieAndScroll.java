@@ -1,5 +1,7 @@
 package tests;
 
+import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.exceptions.ATUTestRecorderException;
 import enums.LiveAndContentEnum;
 import enums.MovieAndScrollEnum;
 import org.junit.Assert;
@@ -15,9 +17,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class MovieAndScroll {
 
   @Test
-  public void checkMovieAndScroll() {
+  public void checkMovieAndScroll() throws ATUTestRecorderException {
 
     WebDriver driver = new ChromeDriver();
+
+    ATUTestRecorder recorder = new ATUTestRecorder("/home/arkadiusz/Pulpit/zadania/SeleniumTest/testsRecord","MovieAndScrollTest",false);
+
+    recorder.start();
 
     driver.navigate().to("http://iplatest.azurewebsites.net");
 
@@ -87,6 +93,8 @@ public class MovieAndScroll {
     Assert.assertEquals("G.I. Joe: Czas Kobry", driver.findElement(By.xpath("//*[contains(text()," + "'" + MovieAndScrollEnum.MovieName.getVal() + "'" + ")]")).getText());
 
     driver.close();
+
+    recorder.stop();
   }
 
 }

@@ -16,10 +16,6 @@ public class SignUp {
     @Test
     public void checkSignUp() throws ATUTestRecorderException, InterruptedException {
 
-        ATUTestRecorder recorder = new ATUTestRecorder("/home/arkadiusz/Pulpit/zadania/SeleniumTest","SignUpTest",false);
-
-        recorder.start();
-
         WebDriver driver = new ChromeDriver();
 
         driver.navigate().to("http://iplatest.azurewebsites.net");
@@ -102,7 +98,7 @@ public class SignUp {
                 driver.findElement(
                         By.cssSelector(
                                 "#container > div > div.mainbox > span > div > div.RegisterUser--flex > form > span > div:nth-child(1) > span > input"));
-        element7.sendKeys("arek@arek3.com");
+        element7.sendKeys("arek@arek4.com");
 
         WebElement element8 =
                 driver.findElement(
@@ -123,8 +119,6 @@ public class SignUp {
         element10.click();
 
         System.out.println("Current Url is: " + driver.getCurrentUrl());
-
-        recorder.stop();
 
         driver.close();
     }

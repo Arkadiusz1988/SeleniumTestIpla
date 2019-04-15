@@ -1,5 +1,7 @@
 package tests;
 
+import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.exceptions.ATUTestRecorderException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -13,9 +15,13 @@ public class Login {
 
 
     @Test
-    public void checkLogin() {
+    public void checkLogin() throws ATUTestRecorderException {
 
         WebDriver driver = new ChromeDriver();
+
+        ATUTestRecorder recorder = new ATUTestRecorder("/home/arkadiusz/Pulpit/zadania/SeleniumTest/testsRecord","Login",false);
+
+        recorder.start();
 
         driver.navigate().to("http://iplatest.azurewebsites.net");
 
@@ -88,7 +94,7 @@ public class Login {
                 driver.findElement(
                         By.cssSelector(
                                 "#container > div > div.mainbox > span > div.route-content.Login > div.Login--flex > form > fieldset > span > div:nth-child(1) > span > input"));
-        element5.sendKeys("arek@arek3.com");
+        element5.sendKeys("arek@arek4.com");
 
         WebElement element6 =
                 driver.findElement(
@@ -102,11 +108,13 @@ public class Login {
                                 "#container > div > div.mainbox > span > div.route-content.Login > div.Login--flex > form > fieldset > span > div.Login-Button--wrapper > span"));
         element7.click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#container > div > div.mainbox > span > span > div > div > img")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Proszę zapoznać się z regulaminami')]")));
 
-        Assert.assertEquals("http://iplatest.azurewebsites.net/ipla", driver.getCurrentUrl());
+        Assert.assertEquals("Proszę zapoznać się z regulaminami", driver.findElement(By.xpath("//*[contains(text(),'Proszę zapoznać się z regulaminami')]")).getText());
 
         driver.close();
+
+        recorder.stop();
     }
 
 }
