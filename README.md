@@ -1,4 +1,4 @@
-# SeleniumTestIpla - autometed regression test cases for Ipla Platform.
+# SeleniumTestIpla - automated regression test cases for Ipla Platform.
 
 Used Stack:
 - Java 8
