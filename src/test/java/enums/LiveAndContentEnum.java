@@ -2,7 +2,7 @@ package enums;
 
 public enum LiveAndContentEnum {
 
-    Today("DZISIAJ 12 kwietnia"),
+    Today("DZISIAJ 15 kwietnia"),
     CanalName("Live"),
     Content("Polityka na ostro (transmisja bezpłatna)");
 

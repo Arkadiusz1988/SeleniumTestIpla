@@ -88,7 +88,7 @@ public class Login {
                 driver.findElement(
                         By.cssSelector(
                                 "#container > div > div.mainbox > span > div.route-content.Login > div.Login--flex > form > fieldset > span > div:nth-child(1) > span > input"));
-        element5.sendKeys("arek@arek.com");
+        element5.sendKeys("arek@arek3.com");
 
         WebElement element6 =
                 driver.findElement(

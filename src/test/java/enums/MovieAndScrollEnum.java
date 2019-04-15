@@ -15,4 +15,5 @@ public enum MovieAndScrollEnum {
     public String getVal() {
         return val;
     }
+
 }

@@ -1,5 +1,7 @@
 package tests;
 
+import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.exceptions.ATUTestRecorderException;
 import enums.ChannelsTvAndContentEnum;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,7 +15,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ChannelsTvAndContent {
 
     @Test
-    public void checkChannelsTvAndContent(){
+    public void checkChannelsTvAndContent() throws ATUTestRecorderException {
+
+        ATUTestRecorder recorder = new ATUTestRecorder("/home/arkadiusz/Pulpit/zadania/SeleniumTest/testsRecord","ChannelsTvAndContentTest",false);
+
+        recorder.start();
 
         WebDriver driver = new ChromeDriver();
 
@@ -71,13 +77,15 @@ public class ChannelsTvAndContent {
         // sprawdzenie przycisku kupuje
         Assert.assertEquals("KUPUJĘ",driver.findElement(By.xpath("//*[contains(text(),'KUPUJĘ')]")).getText());
 
-        WebElement element5 = driver.findElement(By.xpath("//*[contains(text(),'OGLĄDAJ')]"));
+        WebElement element5 = driver.findElement(By.xpath("//*[contains(text(),'KUPUJĘ')]"));
 
         element5.click();
 
         System.out.println("Current Url is: " + driver.getCurrentUrl());
 
         driver.close();
+
+        recorder.stop();
 
     }
 }

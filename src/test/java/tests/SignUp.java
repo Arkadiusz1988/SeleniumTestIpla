@@ -11,8 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-
 public class SignUp {
 
     @Test
@@ -26,7 +24,7 @@ public class SignUp {
 
         driver.navigate().to("http://iplatest.azurewebsites.net");
 
-        WebDriverWait wait = new WebDriverWait(driver, 10); // seconds
+        WebDriverWait wait = new WebDriverWait(driver, 15); // seconds
 
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(
@@ -104,7 +102,7 @@ public class SignUp {
                 driver.findElement(
                         By.cssSelector(
                                 "#container > div > div.mainbox > span > div > div.RegisterUser--flex > form > span > div:nth-child(1) > span > input"));
-        element7.sendKeys(System.currentTimeMillis()+"arek@arek2.com");
+        element7.sendKeys("arek@arek3.com");
 
         WebElement element8 =
                 driver.findElement(

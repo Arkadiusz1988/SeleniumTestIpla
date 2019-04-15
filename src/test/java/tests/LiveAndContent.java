@@ -1,5 +1,7 @@
 package tests;
 
+import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.exceptions.ATUTestRecorderException;
 import enums.LiveAndContentEnum;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,9 +15,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LiveAndContent {
 
     @Test
-    public void checkLiveAndContent(){
+    public void checkLiveAndContent() throws ATUTestRecorderException {
 
         WebDriver driver = new ChromeDriver();
+
+        ATUTestRecorder recorder = new ATUTestRecorder("/home/arkadiusz/Pulpit/zadania/SeleniumTest/testsRecord","LiveAndContentTest",false);
+
+        recorder.start();
 
         driver.navigate().to("http://iplatest.azurewebsites.net");
 
@@ -77,13 +83,15 @@ public class LiveAndContent {
 
         Assert.assertEquals("KUPUJĘ",driver.findElement(By.xpath("//*[contains(text(),'KUPUJĘ')]")).getText());
 
-        WebElement element5 = driver.findElement(By.xpath("//*[contains(text(),'OGLĄDAJ')]"));
+        WebElement element5 = driver.findElement(By.xpath("//*[contains(text(),'KUPUJĘ')]"));
 
         element5.click();
 
         System.out.println("Current Url is: " + driver.getCurrentUrl());
 
         driver.close();
+
+        recorder.stop();
 
     }
 }
