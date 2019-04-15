@@ -1,6 +1,7 @@
 package tests;
 
-import enums.LiveAndContentEnum;
+import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.exceptions.ATUTestRecorderException;
 import enums.SideBarEnum;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -13,9 +14,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class SideBar {
 
   @Test
-  public void checkSideBar() {
+  public void checkSideBar() throws ATUTestRecorderException {
 
     WebDriver driver = new ChromeDriver();
+
+    ATUTestRecorder recorder = new ATUTestRecorder("/home/arkadiusz/Pulpit/zadania/SeleniumTest/testsRecord","SideBarTest",false);
+
+    recorder.start();
 
     driver.navigate().to("http://iplatest.azurewebsites.net");
 
@@ -142,6 +147,8 @@ public class SideBar {
     System.out.println("Current Url is: " + driver.getCurrentUrl());
 
     driver.close();
+
+    recorder.stop();
 
   }
 }

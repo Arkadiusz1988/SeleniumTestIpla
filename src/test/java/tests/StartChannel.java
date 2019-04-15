@@ -1,5 +1,7 @@
 package tests;
 
+import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.exceptions.ATUTestRecorderException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -13,9 +15,13 @@ public class StartChannel {
 
 
     @Test
-    public void checkStartChannel() {
+    public void checkStartChannel() throws ATUTestRecorderException {
 
         WebDriver driver = new ChromeDriver();
+
+        ATUTestRecorder recorder = new ATUTestRecorder("/home/arkadiusz/Pulpit/zadania/SeleniumTest/testsRecord","StartChannelTest",false);
+
+        recorder.start();
 
         driver.navigate().to("http://iplatest.azurewebsites.net");
 
@@ -66,7 +72,7 @@ public class StartChannel {
         Assert.assertEquals("http://iplatest.azurewebsites.net/", driver.getCurrentUrl());
 
         driver.close();
+
+        recorder.stop();
     }
-
-
 }

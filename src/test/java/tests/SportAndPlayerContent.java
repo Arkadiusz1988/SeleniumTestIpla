@@ -1,5 +1,6 @@
 package tests;
 
+import atu.testrecorder.ATUTestRecorder;
 import atu.testrecorder.exceptions.ATUTestRecorderException;
 import enums.SportAndPlayerContentEnum;
 import org.junit.Test;
@@ -16,6 +17,10 @@ public class SportAndPlayerContent {
     public void checkSportAndPlayerContent() throws ATUTestRecorderException, InterruptedException {
 
         WebDriver driver = new ChromeDriver();
+
+        ATUTestRecorder recorder = new ATUTestRecorder("/home/arkadiusz/Pulpit/zadania/SeleniumTest/testsRecord","SportAndPlayerContentTest",false);
+
+        recorder.start();
 
         driver.navigate().to("http://iplatest.azurewebsites.net");
 
@@ -57,7 +62,7 @@ public class SportAndPlayerContent {
                 driver.findElement(
                         By.xpath("//*[contains(text(),"+"'"+ SportAndPlayerContentEnum.ContentName.getVal()+"'"+")]"));
 
-        WebElement parent = element4.findElement(By.xpath("./.."));
+        WebElement parent = element4.findElement(By.xpath("../.."));
         WebElement parent1 = parent.findElement(By.xpath("../.."));
         WebElement parent2 = parent1.findElement(By.xpath("../.."));
 
@@ -81,15 +86,10 @@ public class SportAndPlayerContent {
 
         element6.click();
 
-//        ATUTestRecorder recorder = new ATUTestRecorder("/home/arkadiusz/Pulpit/zadania/SeleniumTest","Test",false);
-
         System.out.println("Current Url is: " + driver.getCurrentUrl());
 
-//        recorder.start();
-//
-//        TimeUnit.SECONDS.sleep(15);
-//
-//        recorder.stop();
+        recorder.stop();
+
         driver.close();
     }
 }
